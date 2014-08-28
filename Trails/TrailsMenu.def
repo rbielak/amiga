@@ -1,0 +1,60 @@
+(*
+	This is a definition module for Trails Menus.
+	Procedures to connect and disconnect menu with
+	a window are exported.
+
+	Created: 5/22/86 by Richard Bielak
+	
+	Modified:
+
+
+	Copyright (c) 1986 by Richard Bielak.
+	
+	This is a Public Domain piece of code, please don't
+	try to sell it! Also, please leave my name in.
+	Thanks.....Richie.
+
+*)
+DEFINITION MODULE TrailsMenu;
+
+FROM Intuition IMPORT WindowPtr;
+
+  (*    ******** IMPORTANT *************
+     The types below reflect the structure of
+     menu. If new items, or new menus are added,
+     make sure that these types are updated.
+  *)
+  TYPE
+    TrailsMenuType = (Actions, Symetry, Size, SquareSize);
+
+    ActionItemType = (HideTitle,
+                      UnHideTitle, 
+		      AboutTrails, 
+                      ClearTrails,
+                      QuitTrails);
+
+    SymetryItemType = (OneFold,
+                       TwoFold,
+		       FourFold);
+
+    SizeItemType    = (Size16,
+                       Size32,
+		       Size64,
+		       Size128,
+		       Infinite);
+
+    SquareSizeItemType = 
+                      (Size2by2,
+		       Size4by4,
+		       Size8by8,
+       		       Size16by16,
+		       Size32by32);
+
+    
+  (* Connect a menu strip to a window *)
+  PROCEDURE ConnectMenu (wp : WindowPtr);
+
+  (* Disconnect a menu strip from a window *)
+  PROCEDURE DisconnectMenu (wp : WindowPtr);
+
+END TrailsMenu.

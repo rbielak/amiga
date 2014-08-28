@@ -1,0 +1,17 @@
+(* This module implements fixes to some of TDI's interfaces 
+   to intuition routines:
+
+   Created: 4/9/86 by TDI
+
+   Modified:
+   
+*)
+
+DEFINITION MODULE Fixes;
+
+ FROM Ports IMPORT MsgPortPtr, MessagePtr;
+ FROM Tasks IMPORT SignalSet;
+
+ PROCEDURE GetMsg (port: MsgPortPtr): MessagePtr;
+ PROCEDURE Wait (sig: SignalSet): SignalSet;
+END Fixes.

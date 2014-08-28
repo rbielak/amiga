@@ -1,0 +1,21 @@
+DEFINITION MODULE TrailsScreen;
+(*
+   This module initializes the window and screen for
+   the trails program.
+   
+   Created: 5/24/86 by Richie Bielak
+   
+   Modified:
+
+   Copyright (c) 1986 by Richard Bielak
+
+   This program maybe freely copied. But please
+   leave my name in. Thanks.....Richie
+
+*)
+FROM Intuition IMPORT WindowPtr, ScreenPtr;
+
+  PROCEDURE SetUpScreen (VAR wp : WindowPtr;
+                         VAR sp : ScreenPtr);
+
+END TrailsScreen.
